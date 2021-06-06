@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <title>Página da Editora</title>
+</head>
+<body>
+    <header>
+        <nav class="mainMenu">
+            <div class="logo">
+                <h1>
+                    <a th:href="@{/}">
+                        Shelfish
+                    </a>
+                </h1>
+                <p class="subtitulo">O seu organizador pessoal de livros</p>
+            </div>
+            <ul>
+                <li>
+                    <a th:href="@{/cadastrarlivro}" class="cadastrarLivro btnCadastro">Cadastrar Livro</a>
+                </li>
+                <li>
+                    <a th:href="@{/cadastrarautor}" class="cadastrarAutor btnCadastro">Cadastrar Autor</a>
+                </li>
+                <li>
+                    <a th:href="@{/cadastrareditora}" class="cadastrarEditorar btnCadastro">Cadastrar Editora</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="livro">
+            <h2 th:text="${editoraPesquisada.editoraNm}"></h2>
+            <div class="containerLivro">
+                <div class="dadosLivro">
+                    <p>
+                        <strong>Nome:</strong>
+                        <span th:text="${editoraPesquisada.editoraNm}"></span>
+                    </p>
+                    <p>
+                        <strong>Cidade:</strong>
+                        <span th:text="${editoraPesquisada.cidade}"></span>
+                    </p>
+                    <p>
+                        <strong>Estado:</strong>
+                        <span th:text="${editoraPesquisada.estado}"></span>
+                    </p>
+                    <p>
+                        <strong>País:</strong>
+                        <span th:text="${editoraPesquisada.pais}"></span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="deleteUpdate">
+            <form th:action="@{/deletareditora/{editoraCod} (editoraCod = ${editoraPesquisada.editoraCod})}"  th:method="POST">
+                <input type="hidden" name="_method" value="delete" />
+                <input type="submit" value="Deletar" style="background-color: red" class="btnCadastro">
+            </form>
+            <form th:action="@{/atualizareditora/{editoraCod} (editoraCod = ${editoraPesquisada.editoraCod})}"  th:method="POST">
+                <input type="hidden" name="_method" value="put" />
+                <input type="submit" value="Editar" class="btnCadastro">
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <span>
+            &copy; Shelfish 2021 
+            
+        </span>
+    </footer>
+
+</body>
+</html>

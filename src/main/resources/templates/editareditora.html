@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <title>Editar editora</title>
+</head>
+<body>
+<header>
+    <nav class="mainMenu">
+        <div class="logo">
+            <h1>
+                <a href="/">
+                    Shelfish
+                </a>
+            </h1>
+            <p class="subtitulo">O seu organizador pessoal de livros</p>
+        </div>
+        <ul>
+            <li>
+                <a href="/cadastrarlivro" class="cadastrarLivro btnCadastro">Cadastrar Livro</a>
+            </li>
+            <li>
+                <a href="/cadastrarautor" class="cadastrarAutor btnCadastro">Cadastrar Autor</a>
+            </li>
+            <li>
+                <a href="/cadastrareditora" class="cadastrarEditorar btnCadastro">Cadastrar Editora</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <h2>Editar editora</h2>
+    <form th:action="@{/cadastrareditora}" th:object="${editora}" method="POST">
+        <input type="number" name="id" id="id" class="id__hidden" th:value="${editoraPesquisada.id}">
+        <label for="editoraCod">Código da editora:</label>
+        <input type="text" name="editoraCod" id="editoraCod" placeholder="Código da editora" required th:value="${editoraPesquisada.editoraCod}">
+        <label for="editoraNm">Nome da editora:</label>
+        <input type="text" name="editoraNm" id="editoraNm" placeholder="Nome da editora" required th:value="${editoraPesquisada.editoraNm}">
+        <label for="cidade">Cidade:</label>
+        <input type="text" name="cidade" id="cidade" placeholder="Cidade" required th:value="${editoraPesquisada.cidade}">
+        <label for="estado">Estado:</label>
+        <input type="text" name="estado" id="estado" placeholder="Estado" required th:value="${editoraPesquisada.estado}">
+        <label for="pais">País:</label>
+        <input type="text" name="pais" id="pais" placeholder="País" required th:value="${editoraPesquisada.pais}">
+        <input type="submit" value="Enviar" class="btnCadastro">
+    </form>
+</main>
+
+<footer>
+        <span>
+            &copy; Shelfish 2021
+
+        </span>
+</footer>
+</body>
+</html>

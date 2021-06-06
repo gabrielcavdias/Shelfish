@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/style.css}"/>
+  <title>OOPS! ALGO DEU ERRADO</title>
+</head>
+<body>
+<header>
+  <nav class="mainMenu">
+    <div class="logo">
+      <h1>
+        <a th:href="@{/}">
+          Shelfish
+        </a>
+      </h1>
+      <p class="subtitulo">O seu organizador pessoal de livros</p>
+    </div>
+    <ul>
+      <li>
+        <a th:href="@{/cadastrarlivro}" class="cadastrarLivro btnCadastro">Cadastrar Livro</a>
+      </li>
+      <li>
+        <a th:href="@{/cadastrarautor}" class="cadastrarAutor btnCadastro">Cadastrar Autor</a>
+      </li>
+      <li>
+        <a th:href="@{/cadastrareditora}" class="cadastrarEditorar btnCadastro">Cadastrar Editora</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <div id="livro">
+    <h2>Se você está nessa página algo deu errado</h2>
+    <div>
+      <ul>
+        <li>Você tentou acessar a página de um livro ou autor não cadastrado</li>
+        <li>Você tentou acessar dados de alguma editora</li>
+        <li>Um erro pode ter acontecido em nossos servidores, nesse caso atualize a página</li>
+      </ul>
+      <p>
+        Caso não seja nenhuma das opções você pode entrar em contato com nosso <a href="mailto:helio.dias@fatec.sp.gov.br">Webmaster</a>
+      </p>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+        <span>
+            &copy; Shelfish 2021 
+            
+        </span>
+</footer>
+
+</body>
+</html>

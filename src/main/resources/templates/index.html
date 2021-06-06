@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <title>Meus livros</title>
+</head>
+<body>
+    <header>
+        <nav class="mainMenu">
+            <div class="logo">
+                <h1>
+                    <a th:href="@{/}">
+                    Shelfish
+                    </a>
+                </h1>
+                <p class="subtitulo">O seu organizador pessoal de livros</p>
+            </div>
+            <ul>
+                <li>
+                    <a th:href="@{/cadastrarlivro}" class="cadastrarLivro btnCadastro">Cadastrar Livro</a>
+                </li>
+                <li>
+                    <a th:href="@{/cadastrarautor}" class="cadastrarAutor btnCadastro">Cadastrar Autor</a>
+                </li>
+                <li>
+                    <a th:href="@{/cadastrareditora}" class="cadastrarEditorar btnCadastro">Cadastrar Editora</a>
+                </li>
+            </ul>            
+        </nav>
+    </header>
+    <main>
+        <h2>Meus Livros</h2>
+        <ul class="listarLivros">
+            <li class="livro"  th:each="livro : ${livros}">
+                <img src="img/semcapa.jpg" alt="Imagem padrão para livro sem capa">
+                <h3><a th:href="@{/livro/{isbn} (isbn=${livro.ISBN})}" class="livro__titulo" th:text="${livro.titulo}"></a></h3>
+                <h4><a th:href="@{/autor/{autorCod} (autorCod = ${livro.autorCod})}" class="livro__autor" th:text="${livro.autorNm}"></a></h4>
+            </li>
+        </ul>
+    </main>
+    <footer>
+        <span>
+            &copy; Shelfish 2021 
+            
+        </span>
+    </footer>
+</body>
+</html>
