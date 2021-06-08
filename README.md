@@ -7,3 +7,7 @@ Organizador pessoal de coleção de livros
 * Helio Gabriel Cavalcante Dias
 
 * Lucca Costa Santos
+
+## Link do Video 
+
+* https://youtu.be/WbigE5vjpzs
